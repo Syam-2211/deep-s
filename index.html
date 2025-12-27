@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Bot Pairing</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode/1.5.3/qrcode.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>WhatsApp Bot Pairing Service</h1>
+            <p>Connect your WhatsApp account securely to our bot service</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="pairing-section">
+            <h2>Pair Your WhatsApp Account</h2>
+            <div id="pairing-container">
+                <div id="pairing-code-display" class="pairing-code">
+                    <span id="pairing-code">------</span>
+                </div>
+                <div id="loading" class="hidden">
+                    <div class="spinner"></div>
+                    <p>Generating Pairing Code...</p>
+                </div>
+                <div id="pairing-input" class="hidden">
+                    <label for="code-input">Enter the 6-digit code from WhatsApp:</label>
+                    <input type="text" id="code-input" maxlength="6" pattern="[0-9]{6}" placeholder="000000">
+                    <button id="verify-btn" class="btn">Verify Code</button>
+                </div>
+            </div>
+            <div id="status-message" class="status hidden"></div>
+            <button id="refresh-btn" class="btn">Generate New Code</button>
+        </section>
+
+        <section id="instructions">
+            <h2>How to Pair</h2>
+            <ol>
+                <li>Open WhatsApp on your phone</li>
+                <li>Tap the menu (three dots) and select "Linked Devices"</li>
+                <li>Tap "Link a Device"</li>
+                <li>Select "Link with phone number instead"</li>
+                <li>Enter the code displayed above</li>
+            </ol>
+        </section>
+
+        <section id="faq">
+            <h2>Frequently Asked Questions</h2>
+            <details>
+                <summary>What is this service?</summary>
+                <p>This service allows you to connect your WhatsApp account to our bot for automated messaging and responses.</p>
+            </details>
+            <details>
+                <summary>Is it secure?</summary>
+                <p>Yes, we use WhatsApp's official Web API and implement security best practices to protect your data.</p>
+            </details>
+            <details>
+                <summary>What if the pairing code doesn't work?</summary>
+                <p>Try generating a new code or ensure you're entering the correct 6-digit code in WhatsApp.</p>
+            </details>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 WhatsApp Bot Pairing Service. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
